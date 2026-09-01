@@ -23,6 +23,25 @@ razumijevanje AI alata u podatkovnoj znanosti.
 
 ## Sadržaj
 
+### 📖 Teorija (`content/`)
+
+| # | Poglavlje |
+|---|-----------|
+| 01 | [Uvod: Data Science u kulturi](content/01_uvod_data_science_u_kulturi.md) |
+| 02 | [Podaci u kulturi: FAIR principi](content/02_podaci_fair_ai.md) |
+| 03 | [Python i Google Colab](content/03_python_colab.md) |
+| 04 | [Pandas — tablični podaci](content/04_pandas_tablice.md) |
+| 05 | [Statistika i korelacije](content/05_statistika.md) |
+| 06 | [Vizualizacija](content/06_vizualizacija.md) |
+| 07 | [NLP obrada teksta](content/07_nlp_tekst.md) |
+| 08 | [LLM u podatkovnoj znanosti](content/08_llm_alati.md) |
+| 09 | [Embedding i semantička pretraga](content/09_embedding_pretraga.md) |
+| 10 | [RAG: razgovor s baštinom](content/10_rag.md) |
+| 11 | [Agentski sustavi](content/11_agenti.md) |
+| 12 | [Etika i kritičko vrednovanje AI](content/12_etika_ai.md) |
+
+### 💻 Skripte (`scripts/`)
+
 | # | Tema | Skripta |
 |---|------|---------|
 | 1 | Pandas — tablični podaci i FAIR principi | `01_pandas_osnove.py` |
@@ -33,7 +52,20 @@ razumijevanje AI alata u podatkovnoj znanosti.
 | 6 | **Semantička pretraga (embedding)** | `06_semanticka_pretraga.py` |
 | 7 | **RAG: razgovor s kulturnom baštinom** | `07_rag_kulturna_bastina.py` |
 | 8 | **Agent istraživač (Google ADK)** | `08_agent_istrazivac.py` |
-| 9 | Colab vježbe (AI-first) | `colab/DS_KULT_Podatkovna_znanost_u_kulturi.ipynb` |
+
+### 🎓 Projekt (`projekt/`)
+
+| Dokument | Opis |
+|----------|------|
+| [Upute za projekt](projekt/UPUTE_PROJEKT.md) | Faze, rokovi, ocjenjivanje, AI pravila |
+| [Predložak prijedloga](projekt/PRIJEDLOG_TEMPLATE.md) | Format Domena/Problem/Cilj |
+| [Primjeri iz prošlih godina](projekt/PRIMJERI_IZ_PROSLIH_GODINA.md) | Kako su studenti definirali teme |
+
+### 🧪 Colab vježbe
+
+| Datoteka | Opis |
+|----------|------|
+| `colab/DS_KULT_Podatkovna_znanost_u_kulturi.ipynb` | AI-first pipeline: FAIR → Pandas+LLM → embedding → RAG → agenti → etika |
 
 ## Postavljanje
 
