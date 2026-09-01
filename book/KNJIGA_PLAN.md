@@ -28,6 +28,16 @@
   (Perak 2025): tamo teorija komunikacijskih agenata, ovdje **praktične metode**
 - Open access + otvoreni kod (GitHub repozitorij uz knjigu)
 
+### Ton (odluka, 1.9.2026.)
+**IZMEĐU PRIRUČNIKA I UDŽBENIKA** — usvojeno od autora:
+- **Udžbenička komponenta:** teorijska utemeljenost — koncepti, autori,
+  istraživački okviri, kritička perspektiva (svako poglavlje ima "Teorijski okvir")
+- **Priručnička komponenta:** korak-po-korak vodiči, kod, primjeri, vježbe
+  (🟢🟡🏆), "što ako ne radi" rubrike
+- Dizajn: svako poglavlje = **Teorijski okvir → Metode → Praktikum → Vježbe → Sažetak**
+- Dubina: pristupačno studentima preddiplomskog studija, ali dovoljno rigorozno
+  za samostalnu primjenu u istraživanju
+
 ### Format
 - ~250 stranica (prosječno 12-15 str. po poglavlju)
 - Poglavlja: teorija + primjeri + kod + vježbe (🟢🟡🏆)
