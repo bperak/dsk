@@ -17,6 +17,12 @@ u kontekstu kulturoloških istraživanja.
 >
 > Open access: https://github.com/bperak/komunikacija_u_doba_ai | ISBN 978-953-361-147-1
 
+## 🕸️ Mreža triju knjiga
+
+Ovi materijali dio su mreže triju knjiga: *Komunikacija u doba umjetne inteligencije* (2025) — **što se dogodilo**; **ovi materijali** — **kako se mjeri**; *Razine i entiteti: ontologija komunikacije u doba umjetne inteligencije* (u izradi) — **gdje to ontološki stoji**. Tema ima jednog vlasnika: ovi materijali ne objašnjavaju ontološki okvir, nego mjerni postupak (i obrnuto).
+
+Detalji, upute po poglavljima i kanonski izvori: [`docs/MREZA-KNJIGA.md`](docs/MREZA-KNJIGA.md) · zajednički registar pojmova: [pojmovnik](https://github.com/bperak/OntologijaKomunikacijeUDobaAI/blob/main/pojmovnik/RJECNIK.md)
+
 Knjiga prati razvoj komunikacijskih tehnologija od usmene predaje do velikih
 jezičnih modela i autonomnih komunikacijskih agenata — temeljni okvir za
 razumijevanje AI alata u podatkovnoj znanosti.
