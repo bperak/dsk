@@ -29,13 +29,14 @@ agent poziva `raspodjela("zbirka")` → interpretira rezultat.
 from google.adk.agents import LlmAgent, LoopAgent
 from google.adk.tools import FunctionTool
 
+MODEL = "gemini-3.5-flash"
 agent = LlmAgent(
     name="istrazivac",
-    model="gemini-2.0-flash",
+    model=MODEL,
     tools=[FunctionTool(pretrazi), FunctionTool(statistika)],
     instruction="Pretraži katalog pa interpretiraj.",
 )
-petlja = LoopAgent(sub_agents=[agent], max_iterations=5)
+petlja = LoopAgent(name="petlja", sub_agents=[agent], max_iterations=5)
 ```
 
 ## MCP (Model Context Protocol)

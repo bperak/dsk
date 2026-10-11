@@ -25,8 +25,9 @@ za tekst, nego sučelje prema podacima i alatima.
 ## Structured output (JSON)
 
 ```python
+MODEL = "gemini-3.5-flash"
 prompt = "Vrati JSON: {\"sentiment\": \"...\", \"vjerojatnost\": 0.9}"
-odgovor = model.generate_content(prompt)
+odgovor = client.models.generate_content(model=MODEL, contents=prompt)
 import json
 data = json.loads(odgovor.text)
 ```

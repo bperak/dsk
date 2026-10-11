@@ -167,20 +167,22 @@ plt.show()
 ### LLM generira graf iz opisa
 
 ```python
+MODEL = "gemini-3.5-flash"
 prompt = """
 Napiši Python (pandas + seaborn) koji crta box plot: 'kino_godisnje'
 po 'spol' iz DataFramea 'df'. Tamna tema, naslov, označene osi. Samo kod.
 """
-kod = model.generate_content(prompt).text
+kod = client.models.generate_content(model=MODEL, contents=prompt).text
 exec(kod)   # ali provjeri i prilagodi!
 ```
 
 ### LLM interpretira graf
 
 ```python
+MODEL = "gemini-3.5-flash"
 opis = """Histogram kino posjeta: većina ispitanika (N=45) ima 0-10 posjeta,
 mali broj 20+, prosjek 11, medijan 8.5. Što to govori o kulturnim navikama?"""
-print(model.generate_content(opis).text)
+print(client.models.generate_content(model=MODEL, contents=opis).text)
 ```
 
 ### Granice LLM vizualizacije

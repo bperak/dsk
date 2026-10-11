@@ -8,11 +8,13 @@
 Slični tekstovi imaju slične vektore → bliski u vektorskom prostoru.
 
 ```python
-import google.generativeai as genai
+from google import genai
 import numpy as np
 
-r = genai.embed_content(model="models/text-embedding-004", content=["kultura", "umjetnost"])
-vektori = np.array(r["embedding"])
+EMB_MODEL = "gemini-embedding-2"
+client = genai.Client()
+resp = client.models.embed_content(model=EMB_MODEL, contents=["kultura", "umjetnost"])
+vektori = np.array([e.values for e in resp.embeddings])
 ```
 
 ## Kosinusna sličnost

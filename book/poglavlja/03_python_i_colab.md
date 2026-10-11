@@ -195,16 +195,15 @@ userdata.set("GEMINI_API_KEY", "OVDJE_KLJUC")
 ### Korak 3: Instalacija i spajanje
 
 ```python
-!pip install -q google-generativeai pandas numpy matplotlib seaborn scikit-learn
+!pip install -q google-genai pandas numpy matplotlib seaborn scikit-learn
 
-import os
-import google.generativeai as genai
+from google import genai
 from google.colab import userdata
 
-genai.configure(api_key=userdata.get("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-2.0-flash")
+MODEL = "gemini-3.5-flash"
+client = genai.Client(api_key=userdata.get("GEMINI_API_KEY"))
 
-odgovor = model.generate_content("Pošto je 23 + 19?")
+odgovor = client.models.generate_content(model=MODEL, contents="Pošto je 23 + 19?")
 print(odgovor.text)    # 42
 ```
 

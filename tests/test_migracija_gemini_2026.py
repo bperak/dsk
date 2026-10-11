@@ -12,11 +12,18 @@ PY = os.environ.get(
     "DSK_PYTHON",
     "/home/bperak/development/jezikmisljenjekultura/.venv/bin/python",
 )
+
+
+def _oznaka(*dijelovi):
+    """Spaja dijelove u izvođenju da se ugašeni naziv ne pojavi u bajtkodu."""
+    return "".join(dijelovi)
+
+
 # Sastavljeno da sama provjera ne sadrži ugašene identifikatore kao cjelinu.
 ZABRANJENO = (
-    "google." + "generativeai",
-    "gemini-2.0-" + "flash",
-    "text-embedding-" + "004",
+    _oznaka("google.", "generativeai"),
+    _oznaka("gemini-2.0-", "flash"),
+    _oznaka("text-embedding-", "004"),
 )
 PRAKTIKUM = [
     ROOT / "colab" / "DS_KULT_Podatkovna_znanost_u_kulturi.ipynb",

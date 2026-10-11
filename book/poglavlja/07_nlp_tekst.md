@@ -154,16 +154,18 @@ Za značenje idemo dalje:
 Riječi sličnog značenja imaju slične vektore (detalji u pogl. 9):
 
 ```python
-import google.generativeai as genai
+from google import genai
 
-r = genai.embed_content(
-    model="models/text-embedding-004",
-    content=["kultura", "umjetnost", "sloboda", "stolica"],
+EMB_MODEL = "gemini-embedding-2"
+client = genai.Client()
+resp = client.models.embed_content(
+    model=EMB_MODEL,
+    contents=["kultura", "umjetnost", "sloboda", "stolica"],
 )
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-vektori = np.array(r["embedding"])
+vektori = np.array([e.values for e in resp.embeddings])
 sim = cosine_similarity(vektori)
 print(sim[0, 1])   # kultura ~ umjetnost: visoko
 print(sim[0, 3])   # kultura ~ stolica: nisko
@@ -174,6 +176,7 @@ print(sim[0, 3])   # kultura ~ stolica: nisko
 LLM-ovi označavaju tekstove bez ručnog treniranja modela:
 
 ```python
+MODEL = "gemini-3.5-flash"
 prompt = """
 Klasificiraj svaki tekst u jednu kategoriju: [vijest, najava, izvještaj].
 Vrati VALIDAN JSON: {"rezultati": [{"id": 1, "kategorija": "..."}]}
@@ -181,7 +184,7 @@ Vrati VALIDAN JSON: {"rezultati": [{"id": 1, "kategorija": "..."}]}
 Tekstovi:
 [{"id": 1, "tekst": "Izložba otvorena u Muzeju moderne umjetnosti..."}]
 """
-odgovor = model.generate_content(prompt)
+odgovor = client.models.generate_content(model=MODEL, contents=prompt)
 import json
 print(json.loads(odgovor.text))
 ```
@@ -189,9 +192,11 @@ print(json.loads(odgovor.text))
 ### Analiza sentimenta
 
 ```python
+MODEL = "gemini-3.5-flash"
+
 def sentiment(tekst):
     p = f"Ocijeni sentiment (pozitivan/negativan/neutralan) s vjerojatnošću. JSON: {{'sentiment': '...', 'vjerojatnost': 0.9}}. Tekst: {tekst}"
-    r = model.generate_content(p)
+    r = client.models.generate_content(model=MODEL, contents=p)
     return json.loads(r.text)
 
 print(sentiment("Muzej je otvorio fantastičnu novu izložbu!"))
@@ -250,7 +255,10 @@ grupe = model_km.fit_predict(vektori)
 ```python
 import re
 from collections import Counter
-import google.generativeai as genai
+from google import genai
+
+MODEL = "gemini-3.5-flash"
+client = genai.Client()
 
 korpus = [
     "Muzej je otvorio novu izložbu o industrijskoj baštini Rijeke.",
@@ -271,8 +279,9 @@ for tekst in korpus:
         print("→", tekst)
 
 # 3. LLM: teme korpusa
-odgovor = model.generate_content(
-    f"Koje su tri glavne teme ovog korpusa? Navedi primjere. Korpus: {korpus}"
+odgovor = client.models.generate_content(
+    model=MODEL,
+    contents=f"Koje su tri glavne teme ovog korpusa? Navedi primjere. Korpus: {korpus}",
 )
 print(odgovor.text)
 ```

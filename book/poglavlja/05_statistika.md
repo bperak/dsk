@@ -193,16 +193,19 @@ Uvijek izvještavajte i veličinu efekta, ne samo p:
 ### Praktikum: LLM + provjera
 
 ```python
+MODEL = "gemini-3.5-flash"
+
 # 1. LLM generira kod
 prompt = "Napiši Python (pandas+scipy) koji testira korelaciju kino~citam. Samo kod."
-kod = model.generate_content(prompt).text
+kod = client.models.generate_content(model=MODEL, contents=prompt).text
 
 # 2. POKRENI kod — izračun je stvaran
 exec(kod)
 
 # 3. LLM interpretira, TI provjeravaš
-interp = model.generate_content(
-    f"Rezultat: r={r:.2f}, p={p:.3f}, N={len(anketa)}. Protumači za kulturologa."
+interp = client.models.generate_content(
+    model=MODEL,
+    contents=f"Rezultat: r={r:.2f}, p={p:.3f}, N={len(anketa)}. Protumači za kulturologa.",
 ).text
 ```
 

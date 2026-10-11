@@ -6,7 +6,7 @@
 
 - Standard u data science-u i digitalnoj humanistici
 - Čitljiva sintaksa, ogroman ekosustav biblioteka
-- pandas, numpy, matplotlib, scikit-learn, nltk, google-generativeai
+- pandas, numpy, matplotlib, scikit-learn, nltk, google-genai
 
 ## Google Colab
 
@@ -47,12 +47,12 @@ def prosjek(lista):
 - **Markdown ćelije** — teorija, objašnjenja, tablice
 - **Code ćelije** — izvršni Python
 - **@title** — naslov za skrivanje koda
-- **userdata** — sigurno čuvanje API ključeva
+- **userdata** — sigurno čuvanje API ključeva. Ključ se izrađuje na `https://aistudio.google.com` **prije nastave** i svatko koristi svoj (kvota se mjeri po projektu, ne po ključu).
 
 ## Postavljanje
 
 ```python
-!pip install -q pandas numpy matplotlib seaborn google-generativeai
+!pip install -q pandas numpy matplotlib seaborn google-genai
 import pandas as pd
 import numpy as np
 ```
