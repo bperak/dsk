@@ -12,15 +12,25 @@ Arhitektura današnjih AI asistenata za muzeje, arhive i knjižnice.
 Koncept: Perak (2025), Komunikacija u doba umjetne inteligencije
 — poglavlje o RAG arhitekturi.
 
-Upute: pip install google-generativeai numpy scikit-learn; GEMINI_API_KEY.
+Upute: pip install google-genai numpy scikit-learn; export GEMINI_API_KEY.
+Ključ izradi prije nastave (https://aistudio.google.com). Kvota je po projektu.
 """
 
 import os
+import time
+
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-MODEL_EMB = "models/text-embedding-004"
-MODEL_LLM = "gemini-2.0-flash"
+# Pri promjeni provjeri https://ai.google.dev/gemini-api/docs/deprecations
+MODEL = "gemini-3.5-flash"
+EMB_MODEL = "gemini-embedding-2"
+
+PORUKA_KLJUC = (
+    "Ključ nije postavljen. Izradi ga na https://aistudio.google.com "
+    "→ Get API key i zalijepi ga ovdje."
+)
+PORUKA_KVOTA = "Prekoračena kvota za minutu — pričekaj pa ponovi"
 
 KORPUS = [
     "Riječki port je sredinom 19. stoljeća postao jedna od najvažnijih luka Austro-Ugarske.",
@@ -34,16 +44,43 @@ KORPUS = [
 ]
 
 
-def dohvati_dokaze(genai, pitanje, korpus, k=3):
-    vk = embed(genai, korpus)
-    vp = embed(genai, [pitanje])
+def _je_kvota(greska):
+    kod = getattr(greska, "code", None)
+    if kod is None:
+        kod = getattr(greska, "status_code", None)
+    return kod == 429 or "429" in str(greska)
+
+
+def pozovi_model(poziv):
+    """Poziv modela. Na 429 ispiše uputu, čeka 5 s i pokušava ponovno (najviše 2 puta)."""
+    for pokusaj in range(3):
+        try:
+            return poziv()
+        except Exception as greska:
+            if not _je_kvota(greska) or pokusaj == 2:
+                raise
+            print(PORUKA_KVOTA)
+            time.sleep(5)
+
+
+def embed(client, tekstovi):
+    """Vektori iz response.embeddings[i].values."""
+    odgovor = pozovi_model(
+        lambda: client.models.embed_content(model=EMB_MODEL, contents=list(tekstovi))
+    )
+    return np.array([stavka.values for stavka in odgovor.embeddings])
+
+
+def dohvati_dokaze(client, pitanje, korpus, k=3):
+    vk = embed(client, korpus)
+    vp = embed(client, [pitanje])
     sim = cosine_similarity(vp, vk)[0]
     top = sim.argsort()[-k:][::-1]
     return [(i, korpus[i], sim[i]) for i in top]
 
 
-def rag_pitaj(genai, model, pitanje, korpus=KORPUS, k=3):
-    dokazi = dohvati_dokaze(genai, pitanje, korpus, k)
+def rag_pitaj(client, pitanje, korpus=KORPUS, k=3):
+    dokazi = dohvati_dokaze(client, pitanje, korpus, k)
     kontekst = "\n\n".join(f"[{i+1}] {tekst}" for i, tekst, _ in dokazi)
 
     prompt = f"""
@@ -56,7 +93,9 @@ Dokazi:
 
 Pitanje: {pitanje}
 """
-    odgovor = model.generate_content(prompt)
+    odgovor = pozovi_model(
+        lambda: client.models.generate_content(model=MODEL, contents=prompt)
+    )
     print(f"Pitanje: {pitanje}")
     print(f"Dohvaćeni dokazi ({k}):")
     for i, tekst, s in dokazi:
@@ -65,18 +104,19 @@ Pitanje: {pitanje}
     print("-" * 60)
 
 
-def embed(genai, tekstovi):
-    r = genai.embed_content(model=MODEL_EMB, content=tekstovi)
-    return np.array(r["embedding"])
+def klijent():
+    if not os.environ.get("GEMINI_API_KEY", "").strip():
+        print(PORUKA_KLJUC)
+        raise SystemExit(PORUKA_KLJUC)
+    from google import genai
+    return genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 
 if __name__ == "__main__":
-    import google.generativeai as genai
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel(MODEL_LLM)
+    client = klijent()
 
     print("=== RAG: razgovor s korpusom riječke baštine ===\n")
-    rag_pitaj(genai, model, "Kada je sagrađeno riječko kazalište?")
-    rag_pitaj(genai, model, "Tko je projektirao Gradsku vijećnicu?")
-    rag_pitaj(genai, model, "Što se danas nalazi u Guvernerovoj palači?")
-    rag_pitaj(genai, model, "Koji je najstariji dio riječke utvrde?")
+    rag_pitaj(client, "Kada je sagrađeno riječko kazalište?")
+    rag_pitaj(client, "Tko je projektirao Gradsku vijećnicu?")
+    rag_pitaj(client, "Što se danas nalazi u Guvernerovoj palači?")
+    rag_pitaj(client, "Koji je najstariji dio riječke utvrde?")

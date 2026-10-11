@@ -12,14 +12,51 @@ Teorijska pozadina:
   — LLM-ovi kao komunikacijski agenti, kritičko vrednovanje
 - Bommasani et al. (2021), On the Opportunities and Risks of Foundation Models
 
-Upute: pip install google-generativeai; GEMINI_API_KEY.
+Upute: pip install google-genai; export GEMINI_API_KEY.
+Ključ izradi prije nastave (https://aistudio.google.com). Kvota je po projektu.
 """
 
 import json
 import os
+import time
+
+# Pri promjeni provjeri https://ai.google.dev/gemini-api/docs/deprecations
+MODEL = "gemini-3.5-flash"
+
+PORUKA_KLJUC = (
+    "Ključ nije postavljen. Izradi ga na https://aistudio.google.com "
+    "→ Get API key i zalijepi ga ovdje."
+)
+PORUKA_KVOTA = "Prekoračena kvota za minutu — pričekaj pa ponovi"
 
 
-def llm_klasifikacija(model, tekstovi, kategorije):
+def _je_kvota(greska):
+    kod = getattr(greska, "code", None)
+    if kod is None:
+        kod = getattr(greska, "status_code", None)
+    return kod == 429 or "429" in str(greska)
+
+
+def pozovi_model(poziv):
+    """Poziv modela. Na 429 ispiše uputu, čeka 5 s i pokušava ponovno (najviše 2 puta)."""
+    for pokusaj in range(3):
+        try:
+            return poziv()
+        except Exception as greska:
+            if not _je_kvota(greska) or pokusaj == 2:
+                raise
+            print(PORUKA_KVOTA)
+            time.sleep(5)
+
+
+def generiraj(client, prompt):
+    odgovor = pozovi_model(
+        lambda: client.models.generate_content(model=MODEL, contents=prompt)
+    )
+    return odgovor.text
+
+
+def llm_klasifikacija(client, tekstovi, kategorije):
     """Klasificira tekstove u zadane kategorije, vraća JSON."""
     prompt = f"""
 Klasificiraj svaki tekst u jednu od kategorija: {kategorije}.
@@ -29,15 +66,15 @@ Vrati VALIDAN JSON (bez markdowna):
 Tekstovi:
 {json.dumps(tekstovi, ensure_ascii=False)}
 """
-    r = model.generate_content(prompt)
+    tekst = generiraj(client, prompt)
     try:
-        cist = r.text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        cist = tekst.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
         return json.loads(cist)
     except json.JSONDecodeError:
-        return {"rezultati": [], "raw": r.text[:300]}
+        return {"rezultati": [], "raw": tekst[:300]}
 
 
-def llm_sazetak(model, tekst):
+def llm_sazetak(client, tekst):
     """Sažima tekst uz upozorenje o provjeri."""
     prompt = f"""
 Sažmi sljedeći tekst na 3 rečenice, zadržavajući ključne podatke.
@@ -45,10 +82,10 @@ Dodaj na kraju: "Provjeri izvorne podatke prije upotrebe."
 
 Tekst: {tekst}
 """
-    return model.generate_content(prompt).text
+    return generiraj(client, prompt)
 
 
-def llm_ekstrakcija(model, tekst):
+def llm_ekstrakcija(client, tekst):
     """Strukturirana ekstrakcija podataka iz teksta."""
     prompt = f"""
 Iz teksta izdvoji strukturirane podatke. Vrati VALIDAN JSON:
@@ -56,18 +93,24 @@ Iz teksta izdvoji strukturirane podatke. Vrati VALIDAN JSON:
 
 Tekst: {tekst}
 """
-    r = model.generate_content(prompt)
+    odgovor = generiraj(client, prompt)
     try:
-        cist = r.text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+        cist = odgovor.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
         return json.loads(cist)
     except json.JSONDecodeError:
-        return {"entiteti": [], "raw": r.text[:300]}
+        return {"entiteti": [], "raw": odgovor[:300]}
+
+
+def klijent():
+    if not os.environ.get("GEMINI_API_KEY", "").strip():
+        print(PORUKA_KLJUC)
+        raise SystemExit(PORUKA_KLJUC)
+    from google import genai
+    return genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 
 if __name__ == "__main__":
-    import google.generativeai as genai
-    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    client = klijent()
 
     tekstovi = [
         "Izložba 'Digitalni krajobrazi' otvorena je u Muzeju moderne umjetnosti.",
@@ -75,7 +118,7 @@ if __name__ == "__main__":
         "Radionica o umjetnoj inteligenciji u kulturi okupila je 40 sudionika.",
     ]
     print("=== 1. LLM klasifikacija ===")
-    rezultat = llm_klasifikacija(model, tekstovi, "vijest, najava, izvjestaj")
+    rezultat = llm_klasifikacija(client, tekstovi, "vijest, najava, izvjestaj")
     print(json.dumps(rezultat, ensure_ascii=False, indent=2))
 
     print("\n=== 2. LLM ekstrakcija entiteta ===")
@@ -83,7 +126,7 @@ if __name__ == "__main__":
         "HNK Ivan pl. Zajc u Rijeci, sagrađen 1885., jedno je od najstarijih kazališta. "
         "Guvernerova palača iz 1896. danas je Pomorski i povijesni muzej."
     )
-    print(json.dumps(llm_ekstrakcija(model, tekst_entiteti), ensure_ascii=False, indent=2))
+    print(json.dumps(llm_ekstrakcija(client, tekst_entiteti), ensure_ascii=False, indent=2))
 
     print("\n=== 3. LLM sažetak ===")
     tekst = """
@@ -93,4 +136,4 @@ if __name__ == "__main__":
     korpusa tekstova, što je otvorilo nove mogućnosti, ali i etičke izazove
     vezane uz pristranost, privatnost i interpretaciju.
     """
-    print(llm_sazetak(model, tekst))
+    print(llm_sazetak(client, tekst))

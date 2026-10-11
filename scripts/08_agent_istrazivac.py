@@ -10,11 +10,21 @@ te piše izvješće — automatizirani istraživač.
 Koncept: Perak (2025), Komunikacija u doba umjetne inteligencije
 — poglavlje o komunikacijskim agentima.
 
-Upute: pip install google-adk google-generativeai; GEMINI_API_KEY.
+Upute: pip install google-adk google-genai pandas; export GEMINI_API_KEY.
+Ključ izradi prije nastave (https://aistudio.google.com). Kvota je po projektu.
 """
 
 import os
+
 import pandas as pd
+
+# Pri promjeni provjeri https://ai.google.dev/gemini-api/docs/deprecations
+MODEL = "gemini-3.5-flash"
+
+PORUKA_KLJUC = (
+    "Ključ nije postavljen. Izradi ga na https://aistudio.google.com "
+    "→ Get API key i zalijepi ga ovdje."
+)
 
 
 # ------------------------------------------------------------------
@@ -52,7 +62,7 @@ class Katalog:
 
 
 # ------------------------------------------------------------------
-# 2. ADK agent
+# 2. ADK agent (izvršava se: usklađeno s google.adk.agents)
 # ------------------------------------------------------------------
 def adk_agent():
     try:
@@ -66,7 +76,7 @@ def adk_agent():
 
     agent = LlmAgent(
         name="istrazivac_bastine",
-        model="gemini-2.0-flash",
+        model=MODEL,
         tools=[
             FunctionTool(kat.pretrazi),
             FunctionTool(kat.statistika),
@@ -88,8 +98,9 @@ def adk_agent():
     print("  petlja.run('Kakva je raspodjela djela po zbirkama?')")
     print("  petlja.run('Pronađi djela iz Moderne zbirke i opiši ih.')")
     print()
-    if not os.environ.get("GEMINI_API_KEY"):
-        print("⚠️ GEMINI_API_KEY nije postavljen — agent se ne izvršava.")
+    if not os.environ.get("GEMINI_API_KEY", "").strip():
+        print(PORUKA_KLJUC)
+        return petlja
     return petlja
 
 

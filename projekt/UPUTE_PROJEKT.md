@@ -46,15 +46,15 @@ Struktura:
 
 ## Ocjenjivanje
 
-| Aktivnost | ECTS | Maks. bodova |
-|-----------|------|--------------|
-| Pohađanje nastave | 1,5 | - |
-| Kontinuirana provjera znanja 1 | 1 | 20 |
-| Kontinuirana provjera znanja 2 (projekt) | 2,5 | 50 |
+| Aktivnost | ECTS | Max bodova |
+|-----------|------|------------|
+| Pohađanje nastave | 1,5 | 0 |
+| Kontinuirana provjera znanja 1 | 1 | 30 |
+| Kontinuirana provjera znanja 2 (projekt) | 2,5 | 70 |
 | Završni ispit | 0 | 0 |
 | **UKUPNO** | **5** | **100** |
 
-(Bez završnog ispita — kontinuirano vrednovanje tijekom nastave.)
+Riječ je o varijanti bez završnog ispita.
 
 ## AI alati u projektu — pravila
 

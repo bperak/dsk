@@ -1,7 +1,7 @@
 # Data Science u kulturi — 2026./2027.
 
 Skripte i materijali za kolegij **Data Science u kulturi** (obvezni, 1. semestar,
-Preddiplomski studij Kulturalni studiji, FFRI).
+Sveučilišni prijediplomski studij Kulturologija (jednopredmetni), FFRI).
 
 **Nositelj:** izv. prof. dr. sc. Benedikt Perak
 
@@ -75,9 +75,13 @@ razumijevanje AI alata u podatkovnoj znanosti.
 
 ## Postavljanje
 
+Svaki student koristi **vlastiti** Gemini API ključ. Ključ se izrađuje **prije nastave, od kuće**
+([Google AI Studio](https://aistudio.google.com) → Get API key) i ne dijeli se.
+Kvota se mjeri **po projektu**, ne po ključu.
+
 ```bash
-pip install pandas numpy matplotlib seaborn scipy scikit-learn nltk google-generativeai google-adk
-export GEMINI_API_KEY="..."   # https://aistudio.google.com
+pip install pandas numpy matplotlib seaborn scipy scikit-learn nltk google-genai google-adk
+export GEMINI_API_KEY="..."   # https://aistudio.google.com → Get API key
 ```
 
 ## AI koncepti (knjiga kao okvir)
