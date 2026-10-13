@@ -1,6 +1,9 @@
 # 03. Python i Google Colab — osnove
 
-> **U ovoj cjelini.** Postavit ćete radno okruženje u pregledniku i napisati prve naredbe u Pythonu — varijable, liste, rječnike, petlje, uvjete i funkcije — bez prethodnog programerskog iskustva. Nakon cjeline moći ćete u Google Colabu učitati tablicu podataka i izračunati osnovne mjere.
+> **U ovoj cjelini.** Postavit ćete radno okruženje u pregledniku i napisati prve naredbe u Pythonu —
+varijable, liste, rječnike, petlje i funkcije — bez prethodnog programerskog
+iskustva. Nakon cjeline moći ćete u Colabu učitati tablicu i izračunati
+osnovne mjere.
 > **Ishodi:** DSK-7 Svladati osnovne statističko-analitičke funkcije data-science programa.
 > **Uz ovu cjelinu idu:** skripta [`scripts/01_pandas_osnove.py`](../scripts/01_pandas_osnove.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb) i [cjelina 04: Pandas — tablični podaci](04_pandas_tablice.md).
 
@@ -8,26 +11,21 @@
 
 ## Zašto Python?
 
-Python je najčešći jezik podatkovne znanosti i digitalne humanistike. Nije
-najbrži ni najstariji, ali ima tri prednosti presudne za kulturna
-istraživanja: čitljivu sintaksu, velik ekosustav biblioteka i zajednicu koja
+Python je najčešći jezik podatkovne znanosti i digitalne humanistike. Ima tri
+prednosti presudne za kulturna istraživanja: čitljivu sintaksu, velik ekosustav biblioteka i zajednicu koja
 uz znanstvene radove objavljuje i kod.
 
 - Standard u data science-u i digitalnoj humanistici
 - Čitljiva sintaksa, ogroman ekosustav biblioteka
 - pandas, numpy, matplotlib, scikit-learn, nltk, google-genai
 
-Usporedba s proračunskom tablicom, alatom koji humanisti najčešće poznaju,
-pokazuje gdje leži razlika: Python podnosi mnogo veće tablice, analizu
-zapisuje kao skriptu koja se pokreće jednim potezom, kod je ujedno
-dokumentacija postupka, a uz njega dolaze obrada teksta i API velikih jezičnih
-modela. Ključna riječ je **ponovljivost**: skripta se može pokrenuti na novim
-podacima, poslati kolegi i provjeriti od recenzenta. Programiranje se zato u
-digitalnoj humanistici opisuje kao **nova pismenost** — sposobnost
-izražavanja analitičke namjere u jeziku koji stroj razumije. Ne morate postati
-programer; morate moći zapisati što želite izračunati. Veliki jezični modeli
-danas taj prag spuštaju, jer namjeru možete opisati riječima i dobiti kod —
-ali razumijevanje onoga što kod radi ostaje vaša odgovornost.
+Usporedba s proračunskom tablicom pokazuje gdje leži razlika: Python podnosi
+mnogo veće tablice, analizu zapisuje kao skriptu, kod je ujedno dokumentacija
+postupka, a uz njega dolaze obrada teksta i API velikih jezičnih modela. Ključna riječ je **ponovljivost**: skripta se pokreće na novim podacima i može
+se provjeriti. Programiranje se zato opisuje kao **nova pismenost** — sposobnost izražavanja
+analitičke namjere u jeziku koji stroj razumije. Ne morate postati programer;
+morate moći zapisati što želite izračunati. Veliki jezični modeli taj prag
+spuštaju, ali razumijevanje onoga što kod radi ostaje vaša odgovornost.
 
 ## Google Colab
 
@@ -48,11 +46,10 @@ je naredbi korisno znati odmah: `Shift+Enter` pokreće ćeliju i prelazi na
 sljedeću, znak `!` na početku izvršava ljusku naredbu (`!pip install ...`), a
 znak `%` uvodi magične naredbe bilježnice.
 
-Važno je razumjeti i ograničenja okruženja: varijable žive samo dok traje
-sesija, pa se nakon duže neaktivnosti ili ponovnog pokretanja okruženja
-(*Runtime → Restart session*) sve iz memorije briše. Bilježnicu i podatke zato
-čuvajte na Google Driveu ili u GitHub repozitoriju, a analizu organizirajte
-tako da se može izvršiti od početka do kraja.
+Varijable žive samo dok traje sesija: nakon duže neaktivnosti ili ponovnog
+pokretanja okruženja (*Runtime → Restart session*) sve se iz memorije briše.
+Bilježnicu i podatke zato čuvajte na Driveu ili u GitHub repozitoriju, a
+analizu organizirajte tako da se izvršava od početka do kraja.
 
 ## Osnovni koncepti Pythona
 
@@ -78,14 +75,13 @@ def prosjek(lista):
 ```
 
 Svaki dio ima jasnu namjenu. **Varijabla** je ime pod kojim je vrijednost
-spremljena: `ime` je tekst (tip `str`), `broj` cijeli broj (`int`), `prosjek`
-decimalni broj (`float`), a `istina` logička vrijednost (`bool`). **Lista** je
-uređeni niz, a članovi se dohvaćaju indeksom koji počinje od nule — `podaci[0]`
-je "kino". **Rječnik** čuva parove ključa i vrijednosti i najbliži je zapisu iz
-kataloga. **Petlja** `for` ponavlja radnju za svaki član, **uvjet** `if`
-odlučuje hoće li se nešto izvršiti, a **funkcija** je imenovani postupak koji
-možemo pozvati više puta. U Pythonu je uvlačenje redaka dio sintakse: tijelo
-petlje, uvjeta i funkcije mora biti uvučeno, inače program ne radi.
+spremljena: `ime` je tekst (`str`), `broj` cijeli broj (`int`), `prosjek`
+decimalni broj (`float`), `istina` logička vrijednost (`bool`). **Lista** je
+uređeni niz s indeksom od nule — `podaci[0]` je "kino". **Rječnik** čuva parove
+ključa i vrijednosti i najbliži je zapisu iz kataloga. **Petlja** `for` ponavlja
+radnju, **uvjet** `if` odlučuje hoće li se izvršiti, a **funkcija** je imenovani
+postupak. Uvlačenje redaka dio je sintakse: tijelo petlje, uvjeta i funkcije
+mora biti uvučeno.
 
 Na kulturnom primjeru to izgleda ovako:
 
@@ -103,9 +99,9 @@ print([z.upper() for z in zanrovi])
 ```
 
 Prvi ispis daje frekvencije žanrova, drugi ih poreda od najčešćega prema
-rjeđemu, a treći pokazuje takozvanu *list comprehension* — sažet način
-preslikavanja liste u novu listu. Isti obrazac (prođi kroz zapise, prebroji
-pojavu) koristit ćete u svakoj analizi anketnih i korpusnih podataka.
+rjeđemu, a treći pokazuje *list comprehension* — sažeto preslikavanje liste u
+novu listu. Isti obrazac (prođi kroz zapise, prebroji pojavu) koristit ćete u
+svakoj analizi upitnika.
 
 ## Struktura Colab bilježnice
 
@@ -130,9 +126,8 @@ import pandas as pd
 import numpy as np
 ```
 
-Biblioteke pandas, numpy i matplotlib u Colabu su već predinstalirane, pa
-instalacijska naredba uglavnom služi za dodatne pakete i provjeru da su sve
-potrebne verzije prisutne. Prvi susret s tablicom izgleda ovako:
+Biblioteke pandas, numpy i matplotlib u Colabu su predinstalirane, pa
+instalacijska naredba služi za dodatne pakete. Prvi susret s tablicom:
 
 ```python
 import pandas as pd
@@ -150,10 +145,10 @@ print(anketa["kino_godisnje"].mean())
 
 Rječnik pretvaramo u tablicu jednim pozivom, stupce dohvaćamo imenom, a mjere
 računamo gotovim funkcijama: `head()` prikazuje prvih pet redaka, `describe()`
-osnovnu statistiku, a `mean()` prosjek jednog stupca. Ako se pojavi poruka
+osnovnu statistiku, a `mean()` prosjek stupca. Ako se pojavi poruka
 `ModuleNotFoundError`, nedostaje biblioteka koju treba instalirati naredbom
-`!pip install -q ime`; ako se pojavi `NameError`, ime varijable nije definirano
-u trenutku izvršavanja ćelije.
+`!pip install -q ime`; ako se pojavi `NameError`, varijabla nije definirana u
+trenutku izvršavanja.
 
 ## Ishodi učenja (7)
 
@@ -183,28 +178,30 @@ u trenutku izvršavanja ćelije.
 
 <details><summary>Odgovori</summary>
 
-1. Python podnosi veće tablice i analizu zapisuje kao skriptu koja se može ponoviti i provjeriti; uz to nudi obradu teksta i AI alate. Ponovljivost je važna jer omogućuje da drugi istraživač dobije iste rezultate.
+1. Python podnosi veće tablice i analizu zapisuje kao skriptu koja se može ponoviti
+i provjeriti; uz to nudi obradu teksta i AI alate. Ponovljivost je važna jer
+omogućuje da drugi istraživač dobije iste rezultate.
 2. Markdown ćelije nose tekst, teoriju i tablice, a Code ćelije Python koji se izvršava; zajedno daju dokument koji je i analiza i izvješće.
 3. Ispisuje "glazba", jer indeksiranje počinje od nule: `podaci[0]` je "kino", a `podaci[1]` drugi član liste.
-4. Sve varijable iz memorije se brišu, pa ćelije treba pokrenuti od početka. Zato se bilježnica organizira tako da se izvršava odozgo prema dolje i podatke učitava iz datoteke ili s Drivea.
+4. Sve varijable iz memorije se brišu, pa ćelije treba pokrenuti od početka; zato
+se bilježnica organizira tako da se izvršava odozgo prema dolje.
 
 </details>
 
 ## Praktično
 
 - Colab: `colab/DS_KULT_Podatkovna_znanost_u_kulturi.ipynb` (ćelija "Instalacija i setup")
-- 🟢 Otvorite novu bilježnicu u Colabu i pokrenite ćeliju s instalacijom i
-  uvezi biblioteka. Zatim ispišite tipove četiriju varijabli (tekst, cijeli
-  broj, decimalni broj, logička vrijednost) i provjerite da ste dobili `str`,
-  `int`, `float` i `bool`.
+- 🟢 Otvorite bilježnicu u Colabu, pokrenite ćeliju s instalacijom i uvezi
+  biblioteka te ispišite tipove četiriju varijabli i provjerite da ste dobili
+  `str`, `int`, `float` i `bool`.
 - 🟢 Napravite tablicu s podacima o pet kulturnih ustanova (naziv, grad,
   godina osnivanja, broj posjetitelja). Ispišite `head()`, `describe()` i
   prosjek broja posjetitelja.
 - 🟡 Napišite funkciju `kategorija(dob)` koja vraća "adolescent" (13-19),
   "mladi" (20-29) ili "odrasli" (30 i više) i pozovite je na pet vrijednosti.
-- 🟡 Izvezite anketu iz Google Formsa u CSV, učitajte je u bilježnicu i
-  odgovorite: koliko ima redaka i stupaca, koji su tipovi stupaca i koliko
-  vrijednosti nedostaje? Odgovore zapišite u Markdown ćeliju iznad koda.
+- 🟡 Izvezite anketu iz Google Formsa u CSV i učitajte je u bilježnicu: koliko ima
+redaka i stupaca, koji su tipovi i koliko vrijednosti nedostaje? Odgovore
+zapišite u Markdown ćeliju.
 - 🏆 Neka vam LLM generira kod koji iz vašeg CSV-a računa prosjek po
   kategorijama (npr. posjeti kinu prema spolu). Pokrenite kod, provjerite
   rezultat na uzorku ručno, a zatim istu analizu napišite sami. Zapišite što je

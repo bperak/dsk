@@ -8,7 +8,7 @@
 >
 > **Uz ovu cjelinu idu:** skripta [`scripts/02_statistika_korelacije.py`](scripts/02_statistika_korelacije.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [06. Vizualizacija](content/06_vizualizacija.md).
 
-Statistika je način da iz mnogo pojedinačnih odgovora izvučemo provjerljivu tvrdnju. U kulturološkom istraživanju to su najčešće ankete o kulturnim navikama, evidencije posjećenosti i brojanja sadržaja u medijskim tekstovima. Prije računanja valja znati kakav je podatak: kategorija (žanr), uređena skala (ocjena 1–5) ili broj s pravim rasponom (broj posjeta).
+Statistika je način da iz mnogo pojedinačnih odgovora izvučemo provjerljivu tvrdnju. U kulturološkom istraživanju to su najčešće ankete o kulturnim navikama i evidencije posjećenosti. Prije računanja valja znati kakav je podatak: kategorija (žanr), uređena skala (ocjena 1–5) ili broj s pravim rasponom (broj posjeta).
 
 ## Deskriptivna statistika
 
@@ -22,19 +22,11 @@ Opisuje podatke brojkama:
 | Standardna devijacija | Raspršenost oko prosjeka |
 | Min/Max | Raspon |
 
-Prosjek je koristan kada su podaci uravnoteženi, ali ga nekoliko velikih vrijednosti lako povuče. Kod posjećenosti izložbe to se vidi jasno: ako sto posjetitelja dođe jednom, a petorica pedeset puta, prosjek skače, dok medijan ostaje blizu tipičnog posjetitelja. Zato se uz prosjek uvijek navodi i medijan.
+Prosjek je koristan kada su podaci uravnoteženi, ali ga nekoliko velikih vrijednosti lako povuče. Ako sto posjetitelja izložbe dođe jednom, a petorica pedeset puta, prosjek skače, dok medijan ostaje blizu tipičnog posjetitelja. Zato uz prosjek uvijek navodimo i medijan.
 
 Standardna devijacija govori koliko su vrijednosti raspršene: dvije ustanove mogu imati isti prosjek, ali jedna radi ravnomjerno, a druga ima prazne dane i nabijene vikende.
 
-| Mjera | Kada je pouzdana | Primjer iz kulture |
-|-------|------------------|--------------------|
-| Prosjek | raspodjela bez ekstrema | prosječna ocjena programa |
-| Medijan | podaci s ekstremima | tipičan broj posjeta |
-| Mod | kategorijski podaci | najčešći žanr u kinu |
-| Standardna devijacija | ujednačenost | ravnomjernost posjeta po danima |
-| Min/Max | nemoguće vrijednosti | 0 ili 300 posjeta dnevno |
-
-Kod skala poput ocjene 1–5 treba biti oprezan: prosjek pretpostavlja da je razlika između 1 i 2 jednaka razlici između 4 i 5, što nije nužno točno. Uz prosjek zato navodimo medijan i raspodjelu odgovora.
+Kod skale 1–5 prosjek pretpostavlja da je razlika između 1 i 2 jednaka razlici između 4 i 5, što nije nužno točno, pa uz njega navodimo medijan i raspodjelu odgovora.
 
 ```python
 import pandas as pd
@@ -59,7 +51,7 @@ import scipy.stats as stats
 r, p = stats.pearsonr(df["kino"], df["citam"])
 ```
 
-Pearsonov koeficijent mjeri linearnu povezanost dviju brojčanih varijabli. Za uređene skale i raspodjele s ekstremima bolji je Spearmanov koeficijent, koji radi s rangovima.
+Pearsonov koeficijent mjeri linearnu povezanost brojčanih varijabli; za uređene skale i raspodjele s ekstremima bolji je Spearmanov, koji radi s rangovima.
 
 ```python
 rho, p = stats.spearmanr(df["ocjena_programa"], df["ocjena_prostora"])
@@ -105,7 +97,7 @@ t, p = stats.ttest_ind(m, z)
 print(f"t = {t:.3f}, p = {p:.4f}, M: {m.mean():.2f}, Ž: {z.mean():.2f}")
 ```
 
-t-test uspoređuje prosjek dviju skupina. Rezultat čitamo zajedno s opisnim brojkama: ako su prosjeci 12,1 i 12,3 posjeta uz p = 0,031, razlika postoji statistički, ali praktično ne mijenja ništa.
+t-test uspoređuje prosjek dviju skupina. Rezultat čitamo s opisnim brojkama: ako su prosjeci 12,1 i 12,3 posjeta uz p = 0,031, razlika je statistički značajna, ali praktično ne mijenja ništa.
 
 ## AI u statistici
 
@@ -161,7 +153,7 @@ Povezana skripta i bilježnica: [`scripts/02_statistika_korelacije.py`](scripts/
 - 🟢 Prikaži raspodjelu ocjena programa (1–5) i usporedi mod s prosjekom.
 - 🟡 Izračunaj Pearsonovu korelaciju za par varijabli i napiši dvije rečenice tumačenja: što povezanost pokazuje, a što ne.
 - 🟡 Ponovi korelaciju na podskupu (npr. ispitanici mlađi od 30) i provjeri je li smjer stabilan.
-- 🏆 Formuliraj tvrdnju o kulturnim navikama, nađi korelaciju koja je podupire, napiši dva alternativna objašnjenja (treća varijabla, obrnut smjer, odabir uzorka) i predloži nacrt istraživanja koji bi ih razlikovao.
+- 🏆 Formuliraj tvrdnju o kulturnim navikama, nađi korelaciju koja je podupire i napiši dva alternativna objašnjenja (treća varijabla, obrnut smjer, odabir uzorka).
 
 ## Dalje
 
