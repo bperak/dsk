@@ -73,6 +73,7 @@ razumijevanje AI alata u podatkovnoj znanosti.
 |----------|------|
 | `colab/DS_KULT_Podatkovna_znanost_u_kulturi.ipynb` | AI-first pipeline: FAIR → Pandas+LLM → embedding → RAG → agenti → etika |
 | [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](colab/DSK_analiza_upitnika_Rijeka.ipynb) ([otvori u Colabu](https://colab.research.google.com/github/bperak/dsk/blob/main/colab/DSK_analiza_upitnika_Rijeka.ipynb)) | Analiza upitnika „Gdje se izlazi van u Rijeci": frekvencije, dob, skale 1–5, slobodni unos, žanrovi, embedding i sažetak (pokazni podaci: `data/demo_odgovori.csv`) |
+| [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb) ([otvori u Colabu](https://colab.research.google.com/github/bperak/dsk/blob/main/colab/DSK_analiza_upitnika_jednostavno.ipynb)) | Jednostavna verzija za PRAVE podatke (objavljena tablica): osam koraka — učitavanje, kraća imena stupaca, čišćenje, frekvencije, slobodni tekst, skale 1–5, sažetak; predložak za vlastite upitnike |
 
 ## Postavljanje
 
