@@ -25,6 +25,7 @@ Svi ključni pojmovi iz dvanaest nastavnih cjelina na jednom mjestu, abecednim r
 | **Digitalna humanistika** | Primjena računalnih metoda na humanistička pitanja i tekstove. | [01. Uvod: Data Science u kulturi](../content/01_uvod_data_science_u_kulturi.md) |
 | **Dimenzija** | broj komponenata vektora | [09. Embedding i semantička pretraga](../content/09_embedding_pretraga.md) |
 | **Dohvat** | Pronalazak najrelevantnijih ulomaka embedding pretragom | [10. RAG — razgovor s kulturnom baštinom](../content/10_rag.md) |
+| **Duboko istraživanje (Deep Research)** | Automatsko pronalaženje izvora i izvješće, uz uvoz izvora u bilježnicu | [10. RAG — razgovor s kulturnom baštinom](../content/10_rag.md) |
 | **Duplikat** | dvostruko zapisano isto opažanje | [04. Pandas — tablični podaci](../content/04_pandas_tablice.md) |
 | **Ekstrakcija entiteta** | pronalaženje osoba, mjesta, djela i datuma | [08. LLM u podatkovnoj znanosti](../content/08_llm_alati.md) |
 | **Embedding** | prikaz teksta kao vektora brojeva | [07. NLP — obrada tekstualnih podataka](../content/07_nlp_tekst.md) |
@@ -50,17 +51,18 @@ Svi ključni pojmovi iz dvanaest nastavnih cjelina na jednom mjestu, abecednim r
 | **Lista** | Uređeni niz vrijednosti kojima pristupamo indeksom od nule. | [03. Python i Google Colab — osnove](../content/03_python_colab.md) |
 | **LLM** | veliki jezični model treniran na velikim količinama teksta | [08. LLM u podatkovnoj znanosti](../content/08_llm_alati.md) |
 | **MCP** | Standard za povezivanje modela s alatima i podacima | [11. Agentski sustavi — automatizirani istraživač](../content/11_agenti.md) |
-| **Medijan** | vrijednost koja dijeli sortirane podatke na dvije polovice | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
+| **Medijan** | vrijednost u sredini sortiranih podataka | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Metapodaci** | Podaci o podacima: tko, kada, što i pod kojom licencom. | [02. Podaci u kulturi: vrste, FAIR principi, AI-spremnost](../content/02_podaci_fair_ai.md) |
 | **Mod** | najčešća vrijednost, korisna za kategorije | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **N-gram** | niz od *n* uzastopnih riječi | [07. NLP — obrada tekstualnih podataka](../content/07_nlp_tekst.md) |
 | **Nacrt izvješća** | Prvi tekst koji agent predlaže, a istraživač provjerava | [11. Agentski sustavi — automatizirani istraživač](../content/11_agenti.md) |
 | **Navod upotrebe AI alata** | Opis u metodologiji što je alat radio, a što istraživač | [12. Etika i kritičko vrednovanje AI rezultata](../content/12_etika_ai.md) |
+| **NotebookLM / Gemini Notebook** | Alat koji odgovara isključivo iz tvojih izvora i citira ih — gotov RAG | [10. RAG — razgovor s kulturnom baštinom](../content/10_rag.md) |
 | **Null vrijednost** | prazno polje koje treba objasniti ili obraditi | [04. Pandas — tablični podaci](../content/04_pandas_tablice.md) |
 | **Opažanje** | jedan redak — ispitanik, izložak ili događaj | [04. Pandas — tablični podaci](../content/04_pandas_tablice.md) |
 | **Otvorena znanost** | Podaci, kod i metode javno su dostupni kad je to moguće. | [01. Uvod: Data Science u kulturi](../content/01_uvod_data_science_u_kulturi.md) |
-| **p-vrijednost** | vjerojatnost ovakvih podataka ako povezanosti nema | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
-| **Pearsonov koeficijent** | mjera linearne povezanosti dviju varijabli | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
+| **p-vrijednost** | vjerojatnost ovakvih podataka bez povezanosti | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
+| **Pearsonov koeficijent** | linearna povezanost dviju varijabli | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Petlja** | Ponavljanje koraka do rješenja ili do zadane granice | [11. Agentski sustavi — automatizirani istraživač](../content/11_agenti.md) |
 | **Petlja i uvjet** | Naredbe koje ponavljaju radnju i odlučuju hoće li se izvršiti. | [03. Python i Google Colab — osnove](../content/03_python_colab.md) |
 | **Podatkovna znanost** | Praksa pretvaranja podataka u znanje: od prikupljanja do interpretacije. | [01. Uvod: Data Science u kulturi](../content/01_uvod_data_science_u_kulturi.md) |
@@ -69,6 +71,7 @@ Svi ključni pojmovi iz dvanaest nastavnih cjelina na jednom mjestu, abecednim r
 | **Pouzdanost** | Stabilnost mjerenja pri ponavljanju. | [02. Podaci u kulturi: vrste, FAIR principi, AI-spremnost](../content/02_podaci_fair_ai.md) |
 | **Poštena skala** | os koja ne pretjeruje u prikazu razlika | [06. Vizualizacija podataka](../content/06_vizualizacija.md) |
 | **Preporuka** | nudenje sadržaja sličnog odabranome | [09. Embedding i semantička pretraga](../content/09_embedding_pretraga.md) |
+| **Pridržanost izvorima (grounding)** | Pravilo da svaki odgovor mora imati pokriće u korpusu | [10. RAG — razgovor s kulturnom baštinom](../content/10_rag.md) |
 | **Pristranost** | Sustavno odstupanje uzorka ili instrumenta od onoga što se mjeri. | [02. Podaci u kulturi: vrste, FAIR principi, AI-spremnost](../content/02_podaci_fair_ai.md) |
 | **Pristranost korpusa** | Iskrivljena slika zbog neravnomjernoga sastava izvora | [12. Etika i kritičko vrednovanje AI rezultata](../content/12_etika_ai.md) |
 | **Pristupačnost** | paleta i oblik čitljivi i osobama koje ne razlikuju boje | [06. Vizualizacija podataka](../content/06_vizualizacija.md) |
@@ -84,7 +87,7 @@ Svi ključni pojmovi iz dvanaest nastavnih cjelina na jednom mjestu, abecednim r
 | **Scatter** | odnos dviju numeričkih varijabli | [06. Vizualizacija podataka](../content/06_vizualizacija.md) |
 | **Semantička pretraga** | pretraga po značenju, ne po riječima | [09. Embedding i semantička pretraga](../content/09_embedding_pretraga.md) |
 | **Sentiment analiza** | mjerenje emocionalnog tona teksta | [07. NLP — obrada tekstualnih podataka](../content/07_nlp_tekst.md) |
-| **Spearmanov koeficijent** | mjera povezanosti rangova, za uređene skale | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
+| **Spearmanov koeficijent** | povezanost rangova, za uređene skale | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Srednja vrijednost** | zbroj vrijednosti podijeljen brojem opažanja | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Standardna devijacija** | prosječno odstupanje od sredine | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Stop-riječi** | česte funkcionalne riječi koje uklanjamo | [07. NLP — obrada tekstualnih podataka](../content/07_nlp_tekst.md) |
@@ -104,11 +107,11 @@ Svi ključni pojmovi iz dvanaest nastavnih cjelina na jednom mjestu, abecednim r
 | **Varijabla** | Ime pod kojim je vrijednost spremljena u memoriji. | [03. Python i Google Colab — osnove](../content/03_python_colab.md) |
 | **Vektor** | niz brojeva koji određuje položaj u prostoru | [09. Embedding i semantička pretraga](../content/09_embedding_pretraga.md) |
 | **Vektorski prostor** | prostor u kojem blizina odgovara značenju | [09. Embedding i semantička pretraga](../content/09_embedding_pretraga.md) |
-| **Veličina učinka** | koliko je povezanost jaka, neovisno o značajnosti | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
+| **Veličina učinka** | koliko je povezanost jaka | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Zbunjujuća varijabla** | treći čimbenik koji objašnjava obje varijable | [05. Statistika — deskriptivna analiza i korelacije](../content/05_statistika.md) |
 | **Znanost o znanosti** | Proučavanje toga kako znanost funkcionira i kako nastaju dokazi. | [01. Uvod: Data Science u kulturi](../content/01_uvod_data_science_u_kulturi.md) |
 | **Čitljivost** | font, oznake, kontrast i redoslijed kategorija | [06. Vizualizacija podataka](../content/06_vizualizacija.md) |
 
 ---
 
-Ukupno pojmova: **102**. Ako neki pojam nedostaje, dodaj ga u tablicu ključnih pojmova pripadne cjeline i pokreni ovaj popis ponovno.
+Ukupno pojmova: **105**. Ako neki pojam nedostaje, dodaj ga u tablicu ključnih pojmova pripadne cjeline i pokreni ovaj popis ponovno.

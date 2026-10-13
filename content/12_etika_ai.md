@@ -70,6 +70,18 @@ print("Tvrdnja se poklapa s izracunom:", abs(tvrdnja_modela - udio) < 0.01)
 | Brojka se razlikuje | Model je procijenio ili pogriješio | U radu navedi točan izračun i zabilježi razliku |
 | Brojke nema u podacima | Tvrdnja je neprovjerljiva | Ispusti tvrdnju ili je izričito označi kao neutemeljenu |
 
+### Provjera citata iz alata koji citiraju (NotebookLM / Gemini Notebook)
+
+Alati koji odgovaraju iz tvojih izvora (cjelina 10) uz svaku tvrdnju daju citat. To je velika prednost, ali nije jamstvo — citat treba otvoriti.
+
+| Provjera | Pitanje koje postavljaš | Što tražiš |
+|---|---|---|
+| Postoji li izvor | Vodi li citat na dokument koji stvarno postoji? | signaturu, naslov, godinu u katalogu |
+| Tvrdi li izvor to | Piše li u tom ulomku ono što odgovor tvrdi? | pročitaj cijeli odlomak, ne samo citiranu rečenicu |
+| Predstavlja li dobro | Je li to jedini glas u korpusu o toj temi? | još barem jedan izvor ili izričitu napomenu o ograničenju |
+
+Isto vrijedi i za izvore koje je alat pronašao sam (duboko istraživanje): u radu navodiš samo ono što si pročitao i provjerio, a u metodologiji napišeš koji su izvori došli iz alata, a koji iz tvoje vlastite pretrage.
+
 ## Pravila odgovorne upotrebe
 
 1. **LLM = asistent za prvi nacrt** — ne za konačno tumačenje

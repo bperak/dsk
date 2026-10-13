@@ -68,6 +68,20 @@ Materijali su napravljeni kao predložak koji se preuređuje, a ne kao fiksni ud
 
 ---
 
+## NotebookLM (danas Gemini Notebook) u seminarskom radu
+
+Googleov alat **NotebookLM** — od 16. srpnja 2026. nosi ime **Gemini Notebook** — radi kao RAG: odgovara isključivo iz izvora koje mu predaš i uz svaku tvrdnju daje citat. Zato je najbrži način da razumiješ što RAG jest (cjelina [10](../content/10_rag.md)), a ujedno praktičan alat za seminarski rad.
+
+Radni tijek koji se u nastavi pokazao korisnim:
+
+1. **Zasebna bilježnica za svaku temu** (bilježnice ne razgovaraju jedna s drugom).
+2. **Primarni izvori prvo**: znanstveni radovi, muzejska dokumentacija, novinski arhiv, vlastiti transkripti.
+3. **Pitanja s provjerom**: nakon svakog odgovora klikni citat i pročitaj ulomak — prije nego što tvrdnju prepišeš u rad.
+4. **Duboko istraživanje (Deep Research)** kad ti trebaju izvori koje još ne poznaješ: alat složi plan, pretraži mrežu i vrati izvješće s izvorima. Uvezene izvore pregledaj jedan po jedan — time korpus prestaje biti samo tvoj odabir.
+5. **Zapis za metodologiju**: koji alat, za što, koje izvore je predložio, koje si zadržao, a koje odbacio.
+
+Za seminarski rad to znači i jednu obvezu: **izvore iz alata citiraj kao i svaki drugi izvor** (vidi [Mrežu triju knjiga](MREZA-KNJIGA.md) za formate citiranja), a tvrdnje koje alat nije mogao potkrijepiti izbaci ili izričito označi kao neutemeljene.
+
 ## 5. Najčešći problemi
 
 | Simptom | Uzrok | Rješenje |

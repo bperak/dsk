@@ -135,6 +135,7 @@ Riječ je o varijanti bez završnog ispita.
 
 - ✅ Dopušteno: LLM za pomoć pri generiranju anketnih pitanja, čišćenju
   podataka, analizi otvorenih odgovora, interpretaciji rezultata
+- ✅ Dopušteno: NotebookLM (danas Gemini Notebook) i slični alati za rad s izvorima — prikupljanje, čitanje i provjeru literature; svaki citat iz alata prije upotrebe otvori i provjeri u izvoru
 - ✅ Dopušteno: semantička pretraga, RAG, agenti za analizu
 - ⛔ Obavezno: **jasno navesti svaku upotrebu AI alata** (u metodologiji)
 - ⛔ Zabranjeno: predstavljanje AI-generiranog teksta kao vlastitog bez navoda

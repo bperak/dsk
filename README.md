@@ -157,7 +157,7 @@ python3 -m pytest tests/ -q
 
 ## Rad s AI alatima — pravila kolegija
 
-AI je u ovom kolegiju alat, ne autor.
+AI je u ovom kolegiju alat, ne autor. Uz modele koje pozivamo iz koda (Gemini preko `google-genai`), u nastavi koristimo i **NotebookLM** — alat koji radi kao RAG: odgovara isključivo iz predanih izvora i citira ih (od srpnja 2026. nosi ime *Gemini Notebook*). Uči se na njemu kako RAG izgleda izvana, a citati se provjeravaju kao i svaki drugi izvor.
 
 - ✅ **Dopušteno:** korištenje modela za pomoć pri pisanju pitanja, čišćenju podataka, analizi otvorenih odgovora, sažimanju i provjeri koda.
 - ⛔ **Obavezno:** svaku upotrebu AI alata **navesti u metodologiji** (koji alat, za što, s kojim zadatkom).

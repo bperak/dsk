@@ -120,6 +120,34 @@ RAG smanjuje halucinacije, ali ih ne uklanja: model i dalje može pogrešno pro�
 | Prazan dohvat | U korpusu nema odgovora, a pitanje je široko | Provjeri popis dohvaćenih ulomaka i njihove sličnosti |
 | Pristran korpus | Zbirka zastupa samo jedan dio pojava | Usporedi sastav korpusa s istraživačkim pitanjem |
 
+## NotebookLM (od srpnja 2026. Gemini Notebook) — RAG koji već koristiš
+
+Postoji alat koji radi upravo ono što smo u ovoj cjelini sastavljali ručno, i vjerojatno ga već koristiš: **NotebookLM**. Google ga je 16. srpnja 2026. preimenovao u **Gemini Notebook** — isti proizvod, isti linkovi i iste bilježnice, novo ime i logo ([Google Workspace Updates](https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html), [blog.google](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook)). U nastavi ga zovemo starim imenom jer se pod njim udomaćio, a ako u sučelju vidiš novo ime, to je isti alat.
+
+Radi po jednom pravilu: **odgovara isključivo iz dokumenata koje si mu predao** i uz svaku tvrdnju daje poveznicu na mjesto u izvoru. Zato je on **RAG u gotovom obliku** — i najbrži način da vidiš kako RAG izgleda izvana, prije nego što ga sam sastaviš.
+
+| Korak RAG-a (naš kod u `scripts/07_rag_kulturna_bastina.py`) | Što to znači u NotebookLM-u |
+|---|---|
+| Korpus | ploča *Sources*: PDF-ovi, dokumenti, mrežne stranice, YouTube, Google Drive |
+| Usitnjavanje i embedding | alat to radi u pozadini, korisnik to ne vidi |
+| Dohvat po značenju | tvoje pitanje u razgovoru |
+| Generiranje uz dokaze | odgovor s numeriranim citatima na ulomke izvora |
+| „Nema u korpusu" | kad u izvorima nema pokrića, alat kaže da odgovora nema |
+
+**Duboko istraživanje (Deep Research).** Uz dodavanje vlastitih izvora alat ima funkciju *Deep Research*: iz tvog pitanja složi plan istraživanja, pregleda stotine mrežnih stranica i vrati organizirano izvješće **sa svojim popisom izvora**, koje zatim možeš uvesti u bilježnicu ([Googleov opis](https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-deep-research-file-types)). Time se mijenja jedna važna stvar: nakon dubokog istraživanja korpus **nije više samo ono što si ti odabrao** — u njega su ušli izvori koje je alat pronašao. Zato vrijedi pravilo: kad uvoziš izvore iz dubokog istraživanja, **prođi ih jedan po jedan** i zadrži samo one koje bi i sam citirao.
+
+**Zašto je to dobro za učenje RAG-a.** Kod ručno građenog asistenta korak dohvata ostaje nevidljiv, a ovdje je vidljiv na tri mjesta: u ploči izvora (što je uopće u korpusu), u citatima (odakle tvrdnja dolazi) i u odbijanju (kad odgovora u korpusu nema). Razumiješ li ta tri mjesta, razumiješ i RAG.
+
+**Radni postupak za seminarski rad:**
+
+1. Za svaku temu otvori **zasebnu bilježnicu** — bilježnice ne razgovaraju jedna s drugom, pa se građa ne miješa.
+2. Ubaci **primarne izvore**: znanstvene radove, muzejsku dokumentaciju, novinske članke, vlastite transkripte.
+3. Postavljaj konkretna pitanja i **klikni na svaki citat** — provjeri da ulomak doista tvrdi ono što odgovor kaže.
+4. Zabilježi **koje si izvore upotrijebio, a koje odbacio i zašto** — to je građa za poglavlje o metodologiji.
+5. Ako si koristio duboko istraživanje, u metodologiji napiši **koje je izvore alat predložio**, a koje si zadržao.
+
+**Granice koje ostaju i kad alat radi besprijekorno.** *Pokrivenost* — nema dokumenta, nema odgovora; *pristranost* — kakvi su ti izvori, takav je i sažetak; *računanje* — alat citira rečenicu, ali ne računa umjesto tebe; *odgovornost* — za tvrdnju u radu odgovara onaj koji ga potpisuje, ne alat. Besplatna razina u pravilu drži do pedeset izvora po bilježnici, a točne granice i dnevne kvote provjeri na [službenoj stranici pomoći](https://support.google.com/notebooklm).
+
 ## Ishodi učenja (6, 8)
 
 - Kritički vrednovati AI rezultate (RAG kao mitigacija halucinacija).
@@ -141,6 +169,9 @@ RAG smanjuje halucinacije, ali ih ne uklanja: model i dalje može pogrešno pro�
 | Top-k | Broj ulomaka koji se predaju modelu |
 | Citiranje izvora | Oznaka izvora uz svaku tvrdnju u odgovoru |
 | Halucinacija | Tvrdnja koju model iznosi bez osnove u dokazima |
+| NotebookLM / Gemini Notebook | Alat koji odgovara isključivo iz tvojih izvora i citira ih — gotov RAG |
+| Duboko istraživanje (Deep Research) | Automatsko pronalaženje izvora i izvješće, uz uvoz izvora u bilježnicu |
+| Pridržanost izvorima (grounding) | Pravilo da svaki odgovor mora imati pokriće u korpusu |
 
 ## Provjeri razumiješ
 
@@ -178,6 +209,8 @@ Treba odgovoriti da odgovora nije navedeno u izvorima, kako to propisuje prompt.
 
 ## Praktično
 
+- 🟢 Otvori bilježnicu u NotebookLM-u (Gemini Notebooku), ubaci tri izvora o istoj temi i postavi pitanje na koje odgovor već znaš. Klikni na citat i pročitaj ulomak; zatim postavi pitanje na koje u izvorima nema odgovora i pogledaj što će alat odgovoriti.
+- 🟡 Usporedi odgovor NotebookLM-a i našeg RAG asistenta (`scripts/07_rag_kulturna_bastina.py`) na isto pitanje i isti korpus. Napiši tri razlike: što je bolje u alatu, što u našem kodu i što nijedan nije mogao.
 - 🟢 Pokreni `scripts/07_rag_kulturna_bastina.py` i postavi četiri pripremljena pitanja. Zabilježi za svako pitanje koje je ulomke sustav dohvatio i slaže li se odgovor s njima.
 - 🟡 Promijeni broj dohvaćenih ulomaka (parametar `k`) i dodaj tri nove rečenice o riječkoj baštini u korpus. Promatraj kada odgovor postaje bogatiji, a kada počinje lutati.
 - 🏆 Sastavi vlastiti korpus od pet do deset zapisa (inventarni zapisi, novinski isječci, terenske bilješke) i izgradi RAG asistent nad njim. U izvješću navedi sastav korpusa, upotrijebljeni prompt i primjer odgovora s citatom, te jedan slučaj kada asistent nije imao dokaza.
