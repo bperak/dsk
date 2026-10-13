@@ -14,12 +14,24 @@ Ovi materijali nisu samostalan projekt: dio su mreže triju knjiga autora.
 
 | ontološka knjiga | ↗ ovdje | čemu |
 |---|---|---|
-| 1 (razina, svojstvo) | 05 Statistika i korelacije | kako se mjeri ono što nazivamo svojstvom razine |
-| 1 (artefakt mjere) | 06 Vizualizacija | zašto graf može stvoriti dojam skoka |
-| 3 (mreža → vektor) | 09 Embedding i semantička pretraga | postupak kojim se mreža prevodi u vektore |
-| 6 (mreže značenja) | 07 NLP obrada teksta | priprema korpusa i osnovne mjere |
-| 10 (mjere i njihove granice) | 12 Etika i kritičko vrednovanje AI | kako se mjere čitaju i gdje zavaravaju |
-| 13–14 (agenti) | 11 Agentski sustavi | praktični agentski sustavi kao građa za analizu |
+| 1 (razina, svojstvo) | [05 Statistika i korelacije](../content/05_statistika.md) | kako se mjeri ono što nazivamo svojstvom razine |
+| 1 (artefakt mjere) | [06 Vizualizacija](../content/06_vizualizacija.md) | zašto graf može stvoriti dojam skoka |
+| 3 (mreža → vektor) | [09 Embedding i semantička pretraga](../content/09_embedding_pretraga.md) | postupak kojim se mreža prevodi u vektore |
+| 6 (mreže značenja) | [07 NLP obrada teksta](../content/07_nlp_tekst.md) | priprema korpusa i osnovne mjere |
+| 10 (mjere i njihove granice) | [12 Etika i kritičko vrednovanje AI](../content/12_etika_ai.md) | kako se mjere čitaju i gdje zavaravaju |
+| 13–14 (agenti) | [11 Agentski sustavi](../content/11_agenti.md) | praktični agentski sustavi kao građa za analizu |
+
+## Kako je ovaj repozitorij složen
+
+| Razina | Gdje | Čemu služi |
+|---|---|---|
+| nastavna jedinica (45 min) | [`content/`](../content/) | čitanje, provjera znanja, zadaci 🟢🟡🏆 |
+| kod koji se pokreće | [`scripts/`](../scripts/), [`colab/`](../colab/) | isti postupak u skripti i u bilježnici |
+| kolegij kao cjelina | [`docs/IZVEDBENI-PLAN.md`](IZVEDBENI-PLAN.md) | moduli, ishodi, tjedni, ocjenjivanje |
+| studentsko istraživanje | [`projekt/`](../projekt/) | od teme do seminarskog rada |
+| knjiga | [`book/`](../book/KNJIGA_PLAN.md) | cjelovit tekst koji raste iz kolegija |
+
+Ista tema postoji na dvije razine dubine: **cjelina** je nastavna jedinica s ishodima i zadacima, **poglavlje knjige** je cjelovit tekst s teorijskim okvirom i raspravom. Cjeline ne prepisuju knjigu — najavljuju je i upućuju na nju.
 
 ## Kanonski izvori mreže
 
@@ -29,14 +41,14 @@ Ovi materijali nisu samostalan projekt: dio su mreže triju knjiga autora.
 
 ## Kako citirati ove materijale
 
-> Perak, B. (2026). *Data Science u kulturi — materijali kolegija* (Preddiplomski studij Kulturalni studiji, Filozofski fakultet u Rijeci). https://github.com/bperak/dsk
+> Perak, B. (2026). *Data Science u kulturi — materijali kolegija* (Sveučilišni prijediplomski studij Kulturologija, Filozofski fakultet u Rijeci). https://github.com/bperak/dsk
 
 ```bibtex
 @misc{perak_dsk_materijali,
   author = {Perak, Benedikt},
   title  = {Data Science u kulturi — materijali kolegija},
   year   = {2026},
-  note   = {Filozofski fakultet u Rijeci, Kulturalni studiji},
+  note   = {Sveučilišni prijediplomski studij Kulturologija, Filozofski fakultet u Rijeci},
   url    = {https://github.com/bperak/dsk}
 }
 ```

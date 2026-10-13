@@ -3,8 +3,26 @@
 
 > **Temelj:** kolegij Data Science u kulturi (FFRI) + knjiga *Komunikacija u doba
 > umjetne inteligencije* (Perak 2025) kao teorijska podloga.
-> **Status:** prvi lejer (struktura + prošireni sadržaj). Sljedeći lejer:
-> raspisivanje poglavlja u puni tekst.
+> **Status (13.10.2026.):** struktura je dovršena, a u punom tekstu napisano je
+> **7 od 14 poglavlja** (cijeli prvi dio knjige). Nastavne cjeline kolegija
+> (`content/`) proširene su u punopravne tekstove s provjerama znanja i zadacima,
+> pa daljnji rad na knjizi ide po istom obrascu: *Teorijski okvir → Metode →
+> Praktikum → Vježbe → Sažetak*.
+
+---
+
+## Stanje izrade (13.10.2026.)
+
+| Dio | Poglavlja | Napisano u punom tekstu | Sljedeći korak |
+|---|---|---|---|
+| **I — Temelji** | 1–3 | **3 / 3** (uvod, podaci, Python i Colab) | lektura i povezivanje s cjelinama 01–04 |
+| **II — Analiza** | 4–7 | **4 / 4** (Pandas, statistika, vizualizacija, NLP) | lektura, provjera kodnih primjera |
+| **III — AI sloj** | 8–11 | 0 / 4 (LLM, embedding, RAG, agenti) | pisanje po obrascu iz cjelina 08–11 |
+| **IV — Kontekst** | 12–14 | 0 / 3 (etika, projekti, pogled naprijed) | pisanje nakon III |
+
+**Gdje je što u repozitoriju:** poglavlja u `book/poglavlja/`, plan u ovoj datoteci, nastavne cjeline u `content/`, kod u `scripts/` i `colab/`, projektni okvir u `projekt/`.
+
+**Pravilo o odnosu cjelina i knjige:** cjelina kolegija je *nastavna jedinica* (45 minuta rada, ishodi, zadaci), a poglavlje knjige je *cjelovit tekst* (teorijski okvir, rasprava, literatura). Ista tema, dvije razine dubine — cjeline ne prepisuju knjigu, nego je najavljuju.
 
 ---
 
