@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-5** Analizirati kvantitativne i kvalitativne tipove podataka te primijeniti postupke statističke analize.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/02_statistika_korelacije.py`](scripts/02_statistika_korelacije.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [06. Vizualizacija](content/06_vizualizacija.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/02_statistika_korelacije.py`](../scripts/02_statistika_korelacije.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [06. Vizualizacija](06_vizualizacija.md).
 
 Statistika je način da iz mnogo pojedinačnih odgovora izvučemo provjerljivu tvrdnju. U kulturološkom istraživanju to su najčešće ankete o kulturnim navikama i evidencije posjećenosti. Prije računanja valja znati kakav je podatak: kategorija (žanr), uređena skala (ocjena 1–5) ili broj s pravim rasponom (broj posjeta).
 
@@ -147,7 +147,7 @@ Model je koristan u tri posla: prevodi istraživačko pitanje u naredbe, objašn
 
 ## Praktično
 
-Povezana skripta i bilježnica: [`scripts/02_statistika_korelacije.py`](scripts/02_statistika_korelacije.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb).
+Povezana skripta i bilježnica: [`scripts/02_statistika_korelacije.py`](../scripts/02_statistika_korelacije.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb).
 
 - 🟢 Za tri numerička stupca iz ankete izračunaj prosjek, medijan i standardnu devijaciju.
 - 🟢 Prikaži raspodjelu ocjena programa (1–5) i usporedi mod s prosjekom.
@@ -157,7 +157,7 @@ Povezana skripta i bilježnica: [`scripts/02_statistika_korelacije.py`](scripts/
 
 ## Dalje
 
-Brojke smo izračunali, ali ih publika ne čita kao tablice. Sljedeći korak je prijevod nalaza u sliku koja pošteno i čitljivo prenosi raspodjelu i odnose. U cjelini [06. Vizualizacija](content/06_vizualizacija.md) učimo koje grafove koristimo i koje pogreške pritom izbjegavamo.
+Brojke smo izračunali, ali ih publika ne čita kao tablice. Sljedeći korak je prijevod nalaza u sliku koja pošteno i čitljivo prenosi raspodjelu i odnose. U cjelini [06. Vizualizacija](06_vizualizacija.md) učimo koje grafove koristimo i koje pogreške pritom izbjegavamo.
 
 ## Literatura
 

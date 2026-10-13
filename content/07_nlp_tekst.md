@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-4** Primijeniti tehnike analize tekstualnih podataka. · **DSK-5** Analizirati kvalitativne tipove podataka.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/04_nlp_obrada_teksta.py`](scripts/04_nlp_obrada_teksta.py) i sljedeća cjelina [08. LLM u podatkovnoj znanosti](content/08_llm_alati.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/04_nlp_obrada_teksta.py`](../scripts/04_nlp_obrada_teksta.py) i sljedeća cjelina [08. LLM u podatkovnoj znanosti](08_llm_alati.md).
 
 ## Zašto NLP u kulturi?
 
@@ -186,7 +186,7 @@ Prvo upozorenje najlakše je pokazati na negaciji. Rečenice „izložba je dobr
 
 ## Praktično
 
-Povezana skripta: [`scripts/04_nlp_obrada_teksta.py`](scripts/04_nlp_obrada_teksta.py).
+Povezana skripta: [`scripts/04_nlp_obrada_teksta.py`](../scripts/04_nlp_obrada_teksta.py).
 
 - 🟢 Pokreni skriptu i zapiši broj tokena, broj tokena nakon stop-riječi te pet najčešćih riječi za oba ugrađena teksta.
 - 🟢 Uzmi kratki stih ili naslov novinskog članka i ručno ga tokeniziraj na papiru; zatim isto napravi kodom i usporedi rezultat.
@@ -196,7 +196,7 @@ Povezana skripta: [`scripts/04_nlp_obrada_teksta.py`](scripts/04_nlp_obrada_teks
 
 ## Dalje
 
-Frekvencije i kolokacije daju prvi pregled korpusa, ali ne i tumačenje. Sljedeća cjelina, [08. LLM u podatkovnoj znanosti](content/08_llm_alati.md), pokazuje kako veliki jezični model preuzima posao koji strojno brojanje ne može obaviti: klasifikaciju, ekstrakciju entiteta i sažimanje — uz jasna pravila provjere.
+Frekvencije i kolokacije daju prvi pregled korpusa, ali ne i tumačenje. Sljedeća cjelina, [08. LLM u podatkovnoj znanosti](08_llm_alati.md), pokazuje kako veliki jezični model preuzima posao koji strojno brojanje ne može obaviti: klasifikaciju, ekstrakciju entiteta i sažimanje — uz jasna pravila provjere.
 
 ## Literatura
 

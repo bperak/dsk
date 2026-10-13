@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-4** Primijeniti data-science tehnike pripreme i pohrane podataka. · **DSK-7** Svladati osnovne funkcije data-science programa.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/01_pandas_osnove.py`](scripts/01_pandas_osnove.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [05. Statistika](content/05_statistika.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/01_pandas_osnove.py`](../scripts/01_pandas_osnove.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [05. Statistika](05_statistika.md).
 
 Podaci u kulturi rijetko dolaze kao gotova tablica: odgovori stižu kao izvoz iz obrasca, popis izložaka kao katalog u Excelu, posjećenost događaja kao dnevni izvještaj. Pandas je Python biblioteka koja sve te oblike svodi na jedan — tablicu u memoriji računala, koju tada možemo reproducibilno filtrirati, grupirati i sažimati, bez ručnog prepisivanja.
 
@@ -190,7 +190,7 @@ df.to_json("anketa_fair.json", orient="records", force_ascii=False, indent=2)
 
 ## Praktično
 
-Povezana skripta i bilježnica: [`scripts/01_pandas_osnove.py`](scripts/01_pandas_osnove.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb).
+Povezana skripta i bilježnica: [`scripts/01_pandas_osnove.py`](../scripts/01_pandas_osnove.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb).
 
 - 🟢 Učitaj `data/demo_odgovori.csv` i ispiši broj redaka, broj stupaca i nazive stupaca.
 - 🟢 Provjeri koliko je praznih polja u svakom stupcu i zapiši koji ih ima najviše.
@@ -200,7 +200,7 @@ Povezana skripta i bilježnica: [`scripts/01_pandas_osnove.py`](scripts/01_panda
 
 ## Dalje
 
-Tablica je sada uredna i opisana, ali još ne znamo što nam govori. Sljedeći korak je mjerenje: koliko su varijable povezane, kolika je razlika među skupinama i je li veća od slučajne. U cjelini [05. Statistika](content/05_statistika.md) učimo upravo to.
+Tablica je sada uredna i opisana, ali još ne znamo što nam govori. Sljedeći korak je mjerenje: koliko su varijable povezane, kolika je razlika među skupinama i je li veća od slučajne. U cjelini [05. Statistika](05_statistika.md) učimo upravo to.
 
 ## Literatura
 

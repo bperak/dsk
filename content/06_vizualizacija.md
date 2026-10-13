@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-6** Kritički vrednovati rezultate, metode i tehnike analize podataka.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/03_vizualizacija.py`](scripts/03_vizualizacija.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [07. NLP — obrada tekstualnih podataka](content/07_nlp_tekst.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/03_vizualizacija.py`](../scripts/03_vizualizacija.py), bilježnica [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb) i sljedeća cjelina [07. NLP — obrada tekstualnih podataka](07_nlp_tekst.md).
 
 Vizualizacija je dio istraživačkog postupka, a ne ukras na kraju. Graf nam najprije služi da sami vidimo podatke — raspodjelu ocjena, razlike među žanrovima, odnos čitanja i odlazaka u kino — a potom ide u izvješće, gdje mora prenijeti nalaz čitatelju koji podatke nije vidio.
 
@@ -161,7 +161,7 @@ Model dobro prevodi opis u kod, predlaže prikladniji tip grafa i opisuje što s
 
 ## Praktično
 
-Povezana skripta i bilježnica: [`scripts/03_vizualizacija.py`](scripts/03_vizualizacija.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](colab/DSK_analiza_upitnika_jednostavno.ipynb).
+Povezana skripta i bilježnica: [`scripts/03_vizualizacija.py`](../scripts/03_vizualizacija.py), [`colab/DSK_analiza_upitnika_jednostavno.ipynb`](../colab/DSK_analiza_upitnika_jednostavno.ipynb).
 
 - 🟢 Nacrtaj histogram broja kino posjeta iz ankete i u naslovu navedi broj opažanja.
 - 🟢 Nacrtaj bar chart prosječne ocjene programa po žanru i sortiraj kategorije po vrijednosti.
@@ -171,7 +171,7 @@ Povezana skripta i bilježnica: [`scripts/03_vizualizacija.py`](scripts/03_vizua
 
 ## Dalje
 
-Tablične i brojčane podatke sada umijemo pripremiti, provjeriti i prikazati. U kulturi, međutim, najveći dio građe nije brojčan, nego tekstualan — članci, transkripti, arhivski opisi i kataloški zapisi. U cjelini [07. NLP — obrada tekstualnih podataka](content/07_nlp_tekst.md) prelazimo na sustavnu analizu teksta.
+Tablične i brojčane podatke sada umijemo pripremiti, provjeriti i prikazati. U kulturi, međutim, najveći dio građe nije brojčan, nego tekstualan — članci, transkripti, arhivski opisi i kataloški zapisi. U cjelini [07. NLP — obrada tekstualnih podataka](07_nlp_tekst.md) prelazimo na sustavnu analizu teksta.
 
 ## Literatura
 

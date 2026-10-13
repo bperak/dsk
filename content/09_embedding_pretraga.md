@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-3** Koristiti javne data-science alate uključujući AI alate. · **DSK-8** Praktične vještine digitalne humanistike.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/06_semanticka_pretraga.py`](scripts/06_semanticka_pretraga.py), bilježnica [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](colab/DSK_analiza_upitnika_Rijeka.ipynb) i sljedeća cjelina [10. RAG — razgovor s kulturnom baštinom](content/10_rag.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/06_semanticka_pretraga.py`](../scripts/06_semanticka_pretraga.py), bilježnica [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](../colab/DSK_analiza_upitnika_Rijeka.ipynb) i sljedeća cjelina [10. RAG — razgovor s kulturnom baštinom](10_rag.md).
 
 Klasifikacija iz prethodne cjeline svrstava tekst u kategorije koje smo unaprijed zadali. No često nam treba nešto drukčije: pronaći ono što je *najbliže* nekom sadržaju, ili otkriti koji su zapisi međusobno slični. Za takve zadatke ne trebaju nam kategorije, nego mjera blizine. Tu nastupa embedding.
 
@@ -158,7 +158,7 @@ U klasteriranju ne zadajemo kategorije unaprijed — one izlaze iz same građe. 
 
 ## Praktično
 
-Povezana skripta i bilježnica: [`scripts/06_semanticka_pretraga.py`](scripts/06_semanticka_pretraga.py), [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](colab/DSK_analiza_upitnika_Rijeka.ipynb).
+Povezana skripta i bilježnica: [`scripts/06_semanticka_pretraga.py`](../scripts/06_semanticka_pretraga.py), [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](../colab/DSK_analiza_upitnika_Rijeka.ipynb).
 
 - 🟢 Pokreni skriptu i zapiši za prvi upit tri najbliža opisa te njihove vrijednosti sličnosti.
 - 🟢 Usporedi rezultat jednog upita s ručnim pogledom na popis opisa i procijeni je li poredak smislen.
@@ -168,7 +168,7 @@ Povezana skripta i bilježnica: [`scripts/06_semanticka_pretraga.py`](scripts/06
 
 ## Dalje
 
-Semantička pretraga vraća najbliže zapise, ali ne sastavlja odgovor. Sljedeća cjelina, [10. RAG — razgovor s kulturnom baštinom](content/10_rag.md), spaja dohvat s generiranjem: pronađeni ulomci postaju dokazi na kojima veliki jezični model gradi odgovor s citatima.
+Semantička pretraga vraća najbliže zapise, ali ne sastavlja odgovor. Sljedeća cjelina, [10. RAG — razgovor s kulturnom baštinom](10_rag.md), spaja dohvat s generiranjem: pronađeni ulomci postaju dokazi na kojima veliki jezični model gradi odgovor s citatima.
 
 ## Literatura
 

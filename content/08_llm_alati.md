@@ -6,7 +6,7 @@
 >
 > **Ishodi:** **DSK-6** Kritički vrednovati rezultate AI alata. · **DSK-8** Koristiti praktične vještine digitalne humanistike uz LLM.
 >
-> **Uz ovu cjelinu idu:** skripta [`scripts/05_llm_analiza.py`](scripts/05_llm_analiza.py), bilježnica [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](colab/DSK_analiza_upitnika_Rijeka.ipynb) i sljedeća cjelina [09. Embedding i semantička pretraga](content/09_embedding_pretraga.md).
+> **Uz ovu cjelinu idu:** skripta [`scripts/05_llm_analiza.py`](../scripts/05_llm_analiza.py), bilježnica [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](../colab/DSK_analiza_upitnika_Rijeka.ipynb) i sljedeća cjelina [09. Embedding i semantička pretraga](09_embedding_pretraga.md).
 
 Veliki jezični modeli promijenili su način na koji humanisti rade s tekstom. Posao koji je nekada tražio tim označivača i tjedne rada — klasificirati stotine odgovora iz upitnika, izvući osobe i mjesta iz novinskih članaka, sažeti izvješće — danas se može obaviti u nekoliko minuta. Ali upravo zato što je posao tako brz, odgovornost provjere ostaje na istraživaču i postaje veća, a ne manja.
 
@@ -164,7 +164,7 @@ Halucinacija u kulturnom istraživanju nije apstraktna opasnost. Model može vez
 
 ## Praktično
 
-Povezana skripta i bilježnica: [`scripts/05_llm_analiza.py`](scripts/05_llm_analiza.py), [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](colab/DSK_analiza_upitnika_Rijeka.ipynb).
+Povezana skripta i bilježnica: [`scripts/05_llm_analiza.py`](../scripts/05_llm_analiza.py), [`colab/DSK_analiza_upitnika_Rijeka.ipynb`](../colab/DSK_analiza_upitnika_Rijeka.ipynb).
 
 - 🟢 Pokreni skriptu i zapiši rezultat klasifikacije triju ugrađenih tekstova. Slaže li se oznaka s tvojim čitanjem?
 - 🟢 Iz teksta s entitetima izdvoji osobe, mjesta i godine; provjeri svaki entitet u izvoru.
@@ -174,7 +174,7 @@ Povezana skripta i bilježnica: [`scripts/05_llm_analiza.py`](scripts/05_llm_ana
 
 ## Dalje
 
-Model sada može čitati i označavati naš tekst, ali još ne umije pronaći najbliži sadržaj po značenju. Sljedeća cjelina, [09. Embedding i semantička pretraga](content/09_embedding_pretraga.md), uvodi upravo taj korak — prikaz teksta kao vektora i pretragu koja razumije temu, a ne samo riječi.
+Model sada može čitati i označavati naš tekst, ali još ne umije pronaći najbliži sadržaj po značenju. Sljedeća cjelina, [09. Embedding i semantička pretraga](09_embedding_pretraga.md), uvodi upravo taj korak — prikaz teksta kao vektora i pretragu koja razumije temu, a ne samo riječi.
 
 ## Literatura
 
