@@ -1,5 +1,7 @@
 # 12. Etika i kritičko vrednovanje AI rezultata
 
+[Dopunski AI resursi i vježba ekstrakcije](../resources/ai/)
+
 **Kolegij:** Data Science u kulturi | 2026./2027.
 
 > **U ovoj cjelini.** Zatvaramo krug. Nakon prikupljanja i analize podataka, RAG asistenta i agenata, ostaje najvažnije pitanje: kada vjerovati modelu. Učimo prepoznati halucinacije, pristranost korpusa i neprovjerene brojke te ispravno navesti upotrebu AI alata u seminarskom radu.

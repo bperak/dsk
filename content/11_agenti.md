@@ -1,5 +1,7 @@
 # 11. Agentski sustavi — automatizirani istraživač
 
+[Dopunski AI resursi i vježba ekstrakcije](../resources/ai/)
+
 **Kolegij:** Data Science u kulturi | 2026./2027.
 
 > **U ovoj cjelini.** Iz RAG asistenta (cjelina 10) prelazimo na agenta: model koji sam bira alate, izvodi ih u petlji i prilagođava postupak dok ne dođe do odgovora. Umjesto jednoga pitanja i jednoga odgovora, agent radi niz koraka — pretraži katalog, izračunaj statistiku, interpretiraj, predloži dalje.

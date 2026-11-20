@@ -1,5 +1,7 @@
 # 07. NLP — obrada tekstualnih podataka
 
+[Dopunski AI resursi i vježba ekstrakcije](../resources/ai/)
+
 **Kolegij:** Data Science u kulturi | 2026./2027.
 
 > **U ovoj cjelini.** Tekst — novinski članak, stih pjesme, ulomak romana, muzejski opis, transkript razgovora — pretvaramo u podatak koji se može prebrojavati i mjeriti. Prolazimo osnovni put obrade prirodnog jezika (NLP): tokenizaciju, čišćenje, stop-riječi, frekvencije i kolokacije, a zatim i suvremeni put prema značenju — embedding, automatsko označavanje velikim jezičnim modelom, analizu sentimenta i tematsko modeliranje.

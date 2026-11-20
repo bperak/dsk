@@ -1,5 +1,7 @@
 # 08. LLM u podatkovnoj znanosti
 
+[Dopunski AI resursi i vježba ekstrakcije](../resources/ai/)
+
 **Kolegij:** Data Science u kulturi | 2026./2027.
 
 > **U ovoj cjelini.** Upoznajemo veliki jezični model (LLM) kao radni alat podatkovne znanosti. Vidjet ćemo za koje je zadatke koristan — klasifikaciju, ekstrakciju entiteta, sažimanje, generiranje koda, označavanje i interpretaciju — kako se od njega traži strojno čitljiv izlaz i zašto je taj ugovor izlaza toliko važan. Jednako važan dio cjeline je kritičko vrednovanje: gdje model griješi, kako se to prepoznaje i kako se svaki rezultat provjerava.

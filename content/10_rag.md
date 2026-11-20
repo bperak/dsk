@@ -1,5 +1,7 @@
 # 10. RAG — razgovor s kulturnom baštinom
 
+[Dopunski AI resursi i vježba ekstrakcije](../resources/ai/)
+
 **Kolegij:** Data Science u kulturi | 2026./2027.
 
 > **U ovoj cjelini.** Povezujemo dvije prethodne teme — semantičku pretragu (cjelina 09) i veliki jezični model (cjelina 08) — u jedan sustav koji na pitanje o kulturnoj baštini odgovara na temelju vaših dokumenata i uz svaku tvrdnju navodi izvor. To je RAG (*Retrieval-Augmented Generation*): najprije dohvat dokaza, zatim generiranje odgovora.

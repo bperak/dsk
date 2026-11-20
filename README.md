@@ -1,5 +1,7 @@
 # Data Science u kulturi — materijali kolegija (2026./2027.)
 
+[Dopunski AI resursi i vježba ekstrakcije](resources/ai/)
+
 **Od ankete do uvida: podaci, statistika i umjetna inteligencija u kulturološkim istraživanjima.**
 
 Kolegij **Data Science u kulturi** — 5 ECTS, zimski semestar. Studij: **Sveučilišni prijediplomski studij Kulturologija (jednopredmetni)**, Filozofski fakultet u Rijeci.
